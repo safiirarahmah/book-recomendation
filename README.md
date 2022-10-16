@@ -2,13 +2,13 @@
 
 ## Project Overview
 
-Membaca adalah salah satu keterapilan yang penting bagi manusia. Membaca memiliki banyak manfaat diantaranya memperluas wawasan, menambah pengetahuan, meningkatkan daya ingat dan kecerdasan otak. Salah satu bahan bacaan yang banyak digunaan adalah buku. "Buku adalah jendela dunia" mungkin kita sering mendengan selogan tersebut. Hal ini wajar karena begitu banyak manfaat yang bisa kita dapatkan dengan membaca buku. Buku merupakan sumber ilmu. Oleh karenanya membaca buku sangat penting dan sangat dibutuhkan.
+Membaca adalah salah satu keterampilan yang penting bagi manusia. Membaca memiliki banyak manfaat diantaranya memperluas wawasan, menambah pengetahuan, meningkatkan daya ingat dan kecerdasan otak. Salah satu bahan bacaan yang banyak digunakan adalah buku. "Buku adalah jendela dunia" mungkin kita sering mendengar slogan tersebut. Hal ini wajar karena begitu banyak manfaat yang bisa kita dapatkan dengan membaca buku. Buku merupakan sumber ilmu. Oleh karenanya membaca buku sangat penting dan sangat dibutuhkan.
 
-Namun minat baca di Indonesia masih sangat rendah.Hal ini tentunya sangat disayangkan dam perlu menjadi perhatian penting. Kendala yang muncul bisa dari tidak terbiasa dan rasa malas untuk membaca.Ada pula pembaca yang hanya menyukai jenis jenis buku tertentu saja. Sedangakan Jenis buku yang tersedia sangat banyak. Menemukan buku yang sesuai dengan keinginan pembaca juga menjadi kendala. Karena terlalu banyak jenis buku yang ada juga menyulitkan pembaca dalam memilah buku yang diinginkan dan dapat menambah rasa malas saat harus menghabiskan waktu untuk mencari buku bacaan yang diinginkan.
+Namun minat baca di Indonesia masih sangat rendah.Hal ini tentunya sangat disayangkan dam perlu menjadi perhatian penting. Kendala yang muncul bisa dari tidak terbiasa dan rasa malas untuk membaca.Ada pula pembaca yang hanya menyukai jenis jenis buku tertentu saja. Sedangkan Jenis buku yang tersedia sangat banyak. Menemukan buku yang sesuai dengan keinginan pembaca juga menjadi kendala. Karena terlalu banyak jenis buku yang ada juga menyulitkan pembaca dalam memilah buku yang diinginkan dan dapat menambah rasa malas saat harus menghabiskan waktu untuk mencari buku bacaan yang diinginkan.
 
-Disisi lain kemajuan teknologi yang sangat pesat mendorong banyak perubahan besar. Terjadi banyak pergeseran aktivitas ke media internet. Ditambah dengan kondisi pandemi kemarin mengharuskan kita beraktivitas, belajar serta bekerja dari rumah. Hal ini menimbulkan tantangan tetapi di sisi lain juga membuka peluang baru. Salah satunya dalam hal kemudahan.
+Disisi lain kemajuan teknologi yang sangat pesat mendorong banyak perubahan besar. Terjadi banyak pergeseran aktivitas ke media internet. Ditambah dengan kondisi pandemi kemarin mengharuskan kita beraktivitas, belajar serta bekerja dari rumah. Hal ini menimbulkan tantangan tetapi disisi lain juga membuka peluang baru. Salah satunya dalam hal kemudahan.
 
-Dengan meihat peluang dan permasalahan yang ada, saya berinisiatif membuat model machine learning yang dapat merekomendasikan buku-buku yang serupa dengan buku yang sebelumya pernah dibaca dan disukai oleh pembaca. Tujuannya agar pembaca akan lebih mudah dalam mencari buku bacaan yang sesuai dengan yang disukainya. Dengan sistem rekomendasi ini diharapkan lebih memudahkan pembaca menemukan buku bacaan yang sesuai dan turut mendorong perkembangan minat baca terutama Di Indonesia.
+Dengan melihat peluang dan permasalahan yang ada, saya berinisiatif membuat model machine learning yang dapat merekomendasikan buku-buku yang serupa dengan buku yang sebelumnya pernah dibaca dan disukai oleh pembaca. Tujuannya agar pembaca akan lebih mudah dalam mencari buku bacaan yang sesuai dengan yang disukainya. Dengan sistem rekomendasi ini diharapkan lebih memudahkan pembaca menemukan buku bacaan yang sesuai dan turut mendorong perkembangan minat baca terutama Di Indonesia.
 
 ## Business Understanding
 
@@ -18,12 +18,12 @@ Dengan meihat peluang dan permasalahan yang ada, saya berinisiatif membuat model
 
 ### Goals
 
-- Membuat model machine learning yang mampu menghasilkan rekomendasi untuk pembaca dalam menemukan buku - buku yang serupa dengan buku yang disukai pembaca dimasa lalu. Menggunakan pendekatan algortima _Content Based Filtering_.
+- Membuat model machine learning yang mampu menghasilkan rekomendasi untuk pembaca dalam menemukan buku - buku yang serupa dengan buku yang disukai pembaca di masa lalu. Menggunakan pendekatan algoritma _Content Based Filtering_.
 
 ### Solution approach
 
-- Solusi yang diterapkan untuk dalam proyek ini adalah dengan menerapkan ALgoritma yaitu _CContent Based Filtering_ dengan ketentuan sebagai berikut :
-  _Content Based Filtering_ dalam pengembangan model machine learning ini digunakan untuk merekomendasikan buku-buku berdasarkan buku yang mirip dengan buku yang disukai pembaca di masa lalu. Dengan kata lain Algoritma ini akan membuat rekomendasi berdasarkan aktivitas yang telah dilakukan pengguna, Sehingga semakin banyak interaksi yang dilakukan oleh pengguan akan semakin baik.
+- Solusi yang diterapkan untuk dalam proyek ini adalah dengan menerapkan ALgoritma yaitu _Content Based Filtering_ dengan ketentuan sebagai berikut :
+  _Content Based Filtering_ dalam pengembangan model machine learning ini digunakan untuk merekomendasikan buku-buku berdasarkan buku yang mirip dengan buku yang disukai pembaca di masa lalu. Dengan kata lain Algoritma ini akan membuat rekomendasi berdasarkan aktivitas yang telah dilakukan pengguna, Sehingga semakin banyak interaksi yang dilakukan oleh pengguna akan semakin baik.
 
 ## Data Understanding
 
@@ -84,7 +84,7 @@ memory usage: 1.1+ MB
 
 ### Mengatasi Missing Value
 
-Tujuan dari proses _missing value_ yaitu agar dataset bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong. Hl ini karena fitur dengan value kosong dapat menimbulkan hasil akurasi yang kurang baik ataupun hasil. Pengecekan missing value ini dengan menggunakan fitur '.isnull().sum()'. Pada proyek ini pertama dilakukan pengecekan missing value pada dataset karena terlalu banyak data yang memiliki issing value kemudian dilakukan penghapusan fitur yang tidak digunakan menggunakan fungsi drop. setelah itu kembali dilakukan pengecekan pada data dan krena masih ditemukan banyak missing value digunakan fungsi dropna() untuk membersihkan data yang masih mengandung missing value.
+Tujuan dari proses _missing value_ yaitu agar dataset bersih dari fitur yang tidak dibutuhkan, maupun yang valuenya kosong. Hl ini karena fitur dengan value kosong dapat menimbulkan hasil akurasi yang kurang baik ataupun hasil. Pengecekan missing value ini dengan menggunakan fitur '.isnull().sum()'. Pada proyek ini pertama dilakukan pengecekan _missing value_ pada dataset karena terlalu banyak data yang memiliki _missing value_ kemudian dilakukan penghapusan fitur yang tidak digunakan menggunakan fungsi drop. setelah itu kembali dilakukan pengecekan pada data dan karena masih ditemukan banyak _missing value_ digunakan fungsi dropna() untuk membersihkan data yang masih mengandung _missing value_.
 
 ### Menghapus Data Duplikat
 
@@ -92,14 +92,14 @@ Pada data sangat memungkinkan terdapat judul dari buku yang sama yang muncul ber
 
 ### Membuat Dictionary Data
 
-Dictionry dibuat dengan tujuan agar data yang dihasilkan hanya memprediksi hasil dari fitur fitur yang telah ambil untuk digunakan sebagai fitur untuk melakukan proses rekomendasi. Pada proyek ini saya menggunakan fitur 'id', 'title', 'author', 'genre', 'review_count', dan 'rate'.
+Dictionary dibuat dengan tujuan agar data yang dihasilkan hanya memprediksi hasil dari fitur fitur yang telah ambil untuk digunakan sebagai fitur untuk melakukan proses rekomendasi. Pada proyek ini saya menggunakan fitur 'id', 'title', 'author', 'genre', 'review_count', dan 'rate'.
 
 
 
 ## Modeling
 
-Dalam tahap Development model pada proyek ini, Algoritma machine learning yang saya gunakan sebagai solusi yaitu dengan pendektan _content based filtering_ menggunakan _TfidfVectorizer_.
-_Content Based Filtering_ merupakan algoritma yang akan membuat sistem rekomendasi berdasarkan item yang disukai pengguna dimasa lalu.
+Dalam tahap Development model pada proyek ini, Algoritma machine learning yang saya gunakan sebagai solusi yaitu dengan pendekatan _content based filtering_ menggunakan _TfidfVectorizer_.
+_Content Based Filtering_ merupakan algoritma yang akan membuat sistem rekomendasi berdasarkan item yang disukai pengguna di masa lalu.
 
 Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku :
 * _TF-IDF Vectorizer_
@@ -107,7 +107,7 @@ Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku 
   Setelah itu fit dan transformasikan data kedalam bentuk matriks. untuk mengubah vektor tf-idf dalam bentuk matriks gunakan fungsi todense().
 
 * _Cosine Similarity_
-  _Cosine similarity_ adalah sebuah teknik untuk menghitung derrajat kesamaan (_similarity_) antar buku. Dengan menggunakan fungsi cosine_similarity dari _library sklearn_. Output yang dihasilkan berupa matriks kesamaan dalam bentuk array.
+  _Cosine similarity_ adalah sebuah teknik untuk menghitung derajat kesamaan (_similarity_) antar buku. Dengan menggunakan fungsi cosine_similarity dari _library sklearn_. Output yang dihasilkan berupa matriks kesamaan dalam bentuk array.
 
 * Mendapatkan Rekomendasi
   Setelah mendapatkan data _similarity_ tahap selanjutnya adalah menghasilkan rekomendasi buku untuk pembaca. Disini saya membuat fungsi book_recommendations dengan parameter :
@@ -133,12 +133,16 @@ Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku 
 
 ## Evaluation
 
-Evaluasi untuk sistem rekomendasi dengan pendekatan _content based filtering_ dapat menggunakan metrik _precision_. Metrik precision yaitu mengukur tingkat ketepatan antara informasi ayng diminta dengan jawaban yang diberikan sistem.
+Evaluasi untuk sistem rekomendasi dengan pendekatan _content based filtering_ dapat menggunakan matric _precision_. Matric _precision_ yaitu mengukur tingkat ketepatan antara informasi yang diminta dengan jawaban yang diberikan sistem.
 
-$$ precission = {TP \over (TP+FP)} $$
+$$ precision = {TP \over (TP+FP)} $$
 
 - dimana : 
    - TP = True Positive (data positif yang diprediksi benar)
    - FP = False Positive (data negatif namun diprediksi sebagai data positif)
 
-Berdasarkan data hasil rekomendasi buku dan buku yang dicari dapat dilihat bahwa Jumaah data menunjukan true positif yang sesuai dan hanya sedikit saja mengandung False Positif. Sehingga sistem tergolong memiliki presisi yang tinggi. Jadi dapat disimppulkan bahwa sistem sudah berhasil menampilakan rekomendasi yang sesuai.
+Berdasarkan data hasil rekomendasi buku dan buku yang dicari dapat dilihat bahwa Jumlah data menunjukan true positif yang sesuai dan hanya sedikit saja mengandung False Positif. Sehingga sistem tergolong memiliki presisi yang tinggi. Jadi dapat disimpulkan bahwa sistem sudah berhasil menampilkan rekomendasi yang sesuai.
+
+
+
+ 
