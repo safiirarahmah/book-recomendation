@@ -136,4 +136,9 @@ Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku 
 Evaluasi untuk sistem rekomendasi dengan pendekatan _content based filtering_ dapat menggunakan metrik _precision_. Metrik precision yaitu mengukur tingkat ketepatan antara informasi ayng diminta dengan jawaban yang diberikan sistem.
 
 $$ precission = {TP \over (TP+FP)} $$
- 
+
+- dimana : 
+   - TP = True Positive (data positif yang diprediksi benar)
+   - FP = False Positive (data negatif namun diprediksi sebagai data positif)
+
+Berdasarkan data hasil rekomendasi buku dan buku yang dicari dapat dilihat bahwa Jumaah data menunjukan true positif yang sesuai dan hanya sedikit saja mengandung False Positif. Sehingga sistem tergolong memiliki presisi yang tinggi. Jadi dapat disimppulkan bahwa sistem sudah berhasil menampilakan rekomendasi yang sesuai.
