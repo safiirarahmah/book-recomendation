@@ -53,7 +53,8 @@ Berikut ini variabel-variable yang terdapat dalam dataset:
 - rating_count: jumlah ratings
 - rate: rating
 
-* Mengecek informasi pada data
+
+Mengecek informasi pada data
 
 Tabel 2. Informasi pada Data
 
@@ -77,6 +78,8 @@ Tabel 2. Informasi pada Data
 dtypes: float64(2), int64(1), object(11)
 memory usage: 1.1+ MB
 
+
+
 ## Data Preparation
 
 ### Mengatasi Missing Value
@@ -91,10 +94,12 @@ Pada data sangat memungkinkan terdapat judul dari buku yang sama yang muncul ber
 
 Dictionry dibuat dengan tujuan agar data yang dihasilkan hanya memprediksi hasil dari fitur fitur yang telah ambil untuk digunakan sebagai fitur untuk melakukan proses rekomendasi. Pada proyek ini saya menggunakan fitur 'id', 'title', 'author', 'genre', 'review_count', dan 'rate'.
 
+
+
 ## Modeling
 
 Dalam tahap Development model pada proyek ini, Algoritma machine learning yang saya gunakan sebagai solusi yaitu dengan pendektan _content based filtering_ menggunakan _TfidfVectorizer_.
-**_Content Based Filtering_** adalah...
+_Content Based Filtering_ merupakan algoritma yang akan membuat sistem rekomendasi berdasarkan item yang disukai pengguna dimasa lalu.
 
 Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku :
 * _TF-IDF Vectorizer_
@@ -105,18 +110,19 @@ Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku 
   _Cosine similarity_ adalah sebuah teknik untuk menghitung derrajat kesamaan (_similarity_) antar buku. Dengan menggunakan fungsi cosine_similarity dari _library sklearn_. Output yang dihasilkan berupa matriks kesamaan dalam bentuk array.
 
 * Mendapatkan Rekomendasi
-  Setelah mendapatkan data _similarity_
- tahap selanjutnya adalah menghasilkan rekomendasi buku untuk pembaca. Disini saya membuat fungsi book_recommendations dengan parameter :
- - title : judul buku (index kemiripan      dataframe).
- - Similarity_data : Dataframe mengenai similarity yang telah kita definisikan sebelumnya.
- - items : Nama dan fitur yang digunakan untuk mendefinisikan kemiripan, dalam hal ini 'title' dan 'genre'.
- - k : Banyak rekomendasi yang ingin diberikan.
+  Setelah mendapatkan data _similarity_ tahap selanjutnya adalah menghasilkan rekomendasi buku untuk pembaca. Disini saya membuat fungsi book_recommendations dengan parameter :
+   - title : judul buku (index kemiripan      dataframe).
+   - Similarity_data : Dataframe mengenai similarity yang telah kita definisikan sebelumnya.
+   - items : Nama dan fitur yang digunakan untuk mendefinisikan kemiripan, dalam hal ini 'title' dan 'genre'.
+   - k : Banyak rekomendasi yang ingin diberikan.
 
  Prose rekomendasi ini akan mencari buku dengan genre yang mirip dengan buku yang sesuai keinginan pembaca.
  Rekomendasi buku yang mirip dengan buku berjudul 'The Great Good Thing (The Sylvie Cycle, #1)' dengan genre 'Fantasy,Fiction,Young Adult,Childrens,Children..' diperoleh hasil sebagai berikut.
 
  Tabel 3. Hasil Rekomendasi Buku.
+
  |   | title                                              | genre                                             |
+ | - | -------------------------------------------------- | ------------------------------------------------- |
  | 0 | Tilly and the Lost Fairytales (Pages & Co., #2)    | Fantasy,Childrens,Middle Grade,Fiction,Childre... |
  | 1 | Story Thieves (Story Thieves, #1)	                | Fantasy,Childrens,Middle Grade,Adventure,Ficti... |
  | 2 | Steinbeck's Ghost                                  | Young Adult,Fiction,Childrens,Middle Grade,Mys... |
@@ -129,4 +135,5 @@ Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku 
 
 Evaluasi untuk sistem rekomendasi dengan pendekatan _content based filtering_ dapat menggunakan metrik _precision_. Metrik precision yaitu mengukur tingkat ketepatan antara informasi ayng diminta dengan jawaban yang diberikan sistem.
 
-$$ precission = TP \over (TP+FP) $$
+$$ precission = {TP \over (TP+FP)} $$
+ 
