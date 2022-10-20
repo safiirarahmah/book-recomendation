@@ -35,9 +35,11 @@ Tabel 1. Informasi dataset
 | Lisensi      | CC0: Public Domain                                                                      |
 | Nama Dataset | Best Books of The 21st Century Dataset                                                  |
 | Usability    | 10.00                                                                                   |
+| Jumlah Data  | 10018                                                                                   |
 | Jumlah Kolom | 14                                                                                      |
 
-Berikut ini variabel-variable yang terdapat dalam dataset:
+Dataset yang saya gunakan merupakan Dataset Best Books of The 21st Century Dataset. Dataset ini berisi lebih dari 9000 buku berbeda dengan berbagai genre, diambil dari daftar Buku Terbaik abad ke-21 di goodreads.
+Berikut adalah isi atau variabel-variable yang terdapat dalam dataset:
 
 - id: id buku
 - title: judul buku
@@ -78,6 +80,11 @@ Tabel 2. Informasi pada Data
 dtypes: float64(2), int64(1), object(11)
 memory usage: 1.1+ MB
 
+- Dataset terdiri:
+  - 2 variabel bertipe data float
+  - 1 variabel bertipe data integer
+  - 11 variable bertipe data object
+
 
 
 ## Data Preparation
@@ -101,6 +108,14 @@ Dictionary dibuat dengan tujuan agar data yang dihasilkan hanya memprediksi hasi
 Dalam tahap Development model pada proyek ini, Algoritma machine learning yang saya gunakan sebagai solusi yaitu dengan pendekatan _content based filtering_ menggunakan _TfidfVectorizer_.
 _Content Based Filtering_ merupakan algoritma yang akan membuat sistem rekomendasi berdasarkan item yang disukai pengguna di masa lalu.
 
+- Kelebihan
+  - Tidak memerlukan data user lain
+  - Dapat merekomendasikan item khusus
+
+- Kelemahan
+  - Tidak mampu menetukan profil pengguna baru
+  - Hanya digunakan untuk fitur yang sesuai.
+
 Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku :
 * _TF-IDF Vectorizer_
   TF-IDF atau _term Frequency-Inverse Document Frequency_ digunakan untuk mengukur frekuensi seberapa sering suatu kata atau term muncul dalam teks tertentu. Proyek ini menggunakan fungsi TfidfVectorizer() dari _library sklearn_. fungsi tersebut diinisialisasi terlebih dahulu, kemudian dilakukan perhitungan idf pada data genre. kemudian dilanjutkan dengan mapping array dari fitur index ke fitur nama.
@@ -117,7 +132,7 @@ Berikut adalah proses dalam tahap development model pada kasus rekomendasi buku 
    - k : Banyak rekomendasi yang ingin diberikan.
 
  Prose rekomendasi ini akan mencari buku dengan genre yang mirip dengan buku yang sesuai keinginan pembaca.
- Rekomendasi buku yang mirip dengan buku berjudul 'The Great Good Thing (The Sylvie Cycle, #1)' dengan genre 'Fantasy,Fiction,Young Adult,Childrens,Children..' diperoleh hasil sebagai berikut.
+ Rekomendasi buku yang mirip dengan buku berjudul 'The Great Good Thing (The Sylvie Cycle, #1)' dengan genre 'Fantasy,Fiction,Young Adult,Childrens,Children..' diperoleh hasil top N recommendation sebagai berikut.
 
  Tabel 3. Hasil Rekomendasi Buku.
 
@@ -141,7 +156,31 @@ $$ precision = {TP \over (TP+FP)} $$
    - TP = True Positive (data positif yang diprediksi benar)
    - FP = False Positive (data negatif namun diprediksi sebagai data positif)
 
-Berdasarkan data hasil rekomendasi buku dan buku yang dicari dapat dilihat bahwa Jumlah data menunjukan true positif yang sesuai dan hanya sedikit saja mengandung False Positif. Sehingga sistem tergolong memiliki presisi yang tinggi. Jadi dapat disimpulkan bahwa sistem sudah berhasil menampilkan rekomendasi yang sesuai.
+Sistem menampilakan rekomendasi berdasarkan genre 'Fantasy,Fiction,Young Adult,Childrens,Children..'
+TP(0) = 4     TP(1) = 3     TP(2) = 3      TP(3) = 2     TP(4) = 4
+FP(0) = 1     FP(1) = 2     FP(2) = 2      FP(3) = 3     FP(4) = 1
+
+Precission : 
+* pada indeks ke 0
+  precision = 4/4+1 = 0.8
+
+* pada indeks ke 1
+  precision = 3/3+2 = 0.6
+
+* pada indeks ke 2
+  pprecision = 3/3+2 = 0.6
+
+* pada indeks ke 3
+  precision = 2/2+3 = 0.4
+
+* pada indeks ke 4
+  precision = 4/4+1 = 0.8
+
+total precision = (0.8 + 0.6 + 0.6 + 0.4 + 0.8)/5 = 0.64 = 64%
+karena nilai precision menunjukkan nilai diatas 50% yaitu sebesar 64% maka dapat dikatakan sistem sudah mampu menghasilkan rekomendasi yang sesuai dengan yang diinginkan pengguna.
+
+Berdasarkan data hasil rekomendasi buku dan buku yang dicari dapat dilihat bahwa Jumlah data menunjukan true positif yang sesuai dan hanya sedikit saja mengandung False Positif. Sehingga sistem tergolong memiliki presisi yang cukup baik. Jadi, dapat disimpulkan bahwa sistem sudah berhasil menampilkan rekomendasi yang sesuai.
+
 
 
 
